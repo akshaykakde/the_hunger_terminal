@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   add_breadcrumb "Employees", :company_users_path, only: [:index, :show, :search]
   add_breadcrumb "Employee Detail", :company_user_path, only: [:show]
 
-
   def new
     @company = Company.new
     @user = @company.employees.build

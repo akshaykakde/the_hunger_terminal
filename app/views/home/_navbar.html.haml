@@ -1,14 +1,69 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top
-  .container-fluid
+  .container-fluid.home_navbar
     .navbar-header
       %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a#logo.navbar-brand{:href => root_path} The Hunger Terminal
+      %a.pull-left#logo.navbar-brand{:href => root_path} The Hunger Terminal
     #bs-example-navbar-collapse-1.collapse.navbar-collapse    
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav
+        -if user_signed_in?  && current_user.role == "company_admin"
+          %li
+            %a{:href => "/companies/#{current_user.company_id}/users"}
+              .name Employee
+          
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => admin_dashboard_index_path}
+              .name Today's Orders 
+            %ul.dropdown-menu
+              %li
+                %a{href: admin_dashboard_index_path} Vendor wise Orders
+              %li
+                %a{href: reports_employees_daily_order_detail_path }Employee wise Orders
+              %li
+                %a{href: admin_dashboard_input_terminal_extra_charges_path} Add Extra charges
+          / %div.icon
+          /   %a{:href => reports_index_path}
+          /     %span.glyphicon.glyphicon-file.gly
+          /     .name.text-center Empolyees Report
+          
+          / %div.icon
+          /   %a{:href => reports_all_terminals_daily_report_path}
+          /     %span.glyphicon.glyphicon-cutlery.gly
+          / /     .name.text-center Terminals Report
+
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
+              .name Employees Report
+            %ul.dropdown-menu
+              %li
+                %a{ :href => reports_employees_todays_orders_path } Todays Report
+              %li
+                %a{ :href => reports_monthly_all_employees_path } Last Month Report
+              %li
+                %a{ :href => reports_index_path } Current Balance
+
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
+              .name Terminals Report
+            %ul.dropdown-menu
+              %li
+                %a{ :href => reports_all_terminals_daily_report_path } Todays Report
+              %li
+                %a{ :href => reports_all_terminals_last_month_reports_path } Last Month Report
+              %li
+                %a{ :href => admin_dashboard_payment_path } Running Balance
+          %li   
+            %a{:href => "/companies/#{current_user.company_id}/terminals"}
+              .name Terminal
+          
+          %li
+            %a{ :href => admin_dashboard_payment_path }
+              .name Payment
+
+      %ul.nav.navbar-nav.navbar-right.home
         %li
           -if user_signed_in? && current_user.role == "company_admin" 
             %a{:href => get_order_details_company_path(current_user.company_id)}
@@ -18,7 +73,6 @@
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               My Order
-              / %span.caret
             %ul.dropdown-menu
               %li
                 %a{:href => vendors_path} Place Order
@@ -38,4 +92,5 @@
             = link_to destroy_user_session_path, method: :delete do
               %span.glyphicon.glyphicon-log-out
               Logout
-              
+        
+            
