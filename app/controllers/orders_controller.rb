@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   load_and_authorize_resource  param_method: :order_params
   before_action :require_permission, only: [:show, :edit, :update, :delete]
   
-  add_breadcrumb "home", :root_path
+  add_breadcrumb "Home", :root_path
   add_breadcrumb "Terminals", :vendors_path, only: [:new, :create, :load_terminal]
   add_breadcrumb "My Order History", :orders_path, only: [:order_history]
   add_breadcrumb "Today's Order", :terminal_order_path, only: [:show, :edit, :update]

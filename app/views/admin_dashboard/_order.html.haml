@@ -27,7 +27,7 @@
               / - order = Order.find(order_detail.id)
               - if order_detail.status == "pending"
                 %td.text-center
-                  = link_to admin_dashboard_order_detail_remove_path(order_detail.detail_id), method: :delete do
+                  = link_to admin_dashboard_order_detail_remove_path(order_detail.detail_id), method: :delete, data:{confirm: "Are you sure?"} do
                     %span.glyphicon.glyphicon-remove
               - employee = order_detail.emp_name
     .modal-footer
