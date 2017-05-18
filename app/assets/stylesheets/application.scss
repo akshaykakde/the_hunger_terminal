@@ -35,11 +35,6 @@ body {
   height: 100%
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -112,7 +107,7 @@ footer {
   padding: 5%;
 }
 
-.sidenav {
+/*.sidenav {
    
   height: 100%;
   width: 104px;
@@ -132,7 +127,7 @@ footer {
   color: #337ab7;
  
   transition: 0.3s
-}
+}*/
 
 .icon :hover, .offcanvas .icon:focus{
     color: #f1f1f1;
@@ -424,6 +419,14 @@ button.toast-close-button {
     display: none;
   }
 
+  a{
+    display: hidden;
+  }
+
+  .pdf_link {
+    display: none;
+  }
+
   #container {
     width: auto;
     margin: 0;
@@ -439,5 +442,15 @@ button.toast-close-button {
     display: none;
   }
 
+}
 
+.navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  -webkit-padding-start: 4%;
+}
+
+.navbar.navbar-collapse {
+  text-align: center;
 }

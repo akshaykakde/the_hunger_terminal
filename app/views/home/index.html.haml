@@ -7,58 +7,52 @@
   %body   
     .jumbotron
       .container.text-center
-        %h1 Welcome to the Hunger Terminal
+        .h1.home Food Ordering for Corporate Employees!! 
         -if !user_signed_in?
-          %h2 Want to be a part of this application??
-          %span.glyphicon.glyphicon-chevron-down
           %br
           = link_to "Company Sign Up", new_company_path, class: "btn btn-primary"
           %br
           %br
           = link_to "Employee Login", user_session_path, class: "btn btn-success"
-    .container.text-center
-      %h4.text-center Get Your food at your doorstep
-      %br/  
-      %button.btn.btn-success{"data-target" => "#steps", "data-toggle" => "collapse", :type => "button"} See How
-      
-      #steps.collapse
-        .container.instructions
-          .row
-            .col-md-3
-              .step-one 1. Login
-              .login-image= image_tag("login1.png",width:"55px",height:"34px")
-              .description If already a member then login to our site
-            .col-md-3
-              .step-one 2. Choose
-              .login-image= image_tag("choice.png",width:"55px",height:"34px")
-              .description Browse to find the vendors and their menus to find the food you like
-            .col-md-3
-              .step-one 3. Order
-              .login-image= image_tag("order.png",width:"55px",height:"34px")
-              .description Place an order of the food you want
-            .col-md-3
-              .step-one 4. Enjoy
-              .login-image= image_tag("enjoy_food.png",width:"55px",height:"34px")
-              .description Food is prepared and delivered to your door
+    .container.text-center 
+      .h1 Process of Ordering Food 
+      .container.instructions
+        .row
+          .col-md-3
+            .step-one 1. Login
+            .login-image= image_tag("login1.png",width:"55px",height:"34px")
+            .description If already a member then login to our site
+          .col-md-3
+            .step-one 2. Choose
+            .login-image= image_tag("choice.png",width:"55px",height:"34px")
+            .description Browse to find the vendors and their menus to find the food you like
+          .col-md-3
+            .step-one 3. Order
+            .login-image= image_tag("order.png",width:"55px",height:"34px")
+            .description Place an order of the food you want
+          .col-md-3
+            .step-one 4. Enjoy
+            .login-image= image_tag("enjoy_food.png",width:"55px",height:"34px")
+            .description Food is prepared and delivered to your door
               
     .container.bg-3.text-center
-      %h4 Our Associates 
-      .row
-        .col-md-2
+      .h4.home Our Associates 
+      .row.home
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
             = image_tag("foodpandalogo.jpg", class: "img-responsive",width:"80%", height:"100%")
-        .col-md-2
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
             = image_tag("dominos.png", class: "img-responsive",width:"80%", height:"100%")
-        .col-md-2
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
             = image_tag("swiggy.png", class: "img-responsive",width:"80%", height:"100%")
-        .col-md-2
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
             = image_tag("rollsmania1.png", class: "img-responsive",width:"80%", height:"100%")
-        .col-md-2
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
             = image_tag("venkys.png", class: "img-responsive", width:"80%", height:"100%")
-        .col-md-2
+        .col-md-2.col-sm-2.col-xs-2
           .thumbnail
-            = image_tag("Faasos_Logo.jpg", class: "img-responsive", width:"80",height: "100%")
+            = image_tag("Faasos_Logo.jpg", class: "img-responsive", width:"80%",height: "100%")

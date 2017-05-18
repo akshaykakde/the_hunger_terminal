@@ -19,5 +19,5 @@
           %td.text-center= link_to 'See Order Details', reports_order_details_path(order_id: order.id), remote: true
           %td.text-center= "₹ #{order.total_cost}"
           %td.text-center= "₹ #{order.discount}"
-          / %td.text-center= "₹ #{order.total_cost - order.discount}"
+          %td.text-center= "₹ #{order.total_cost - order.discount}"
 #order_details.modal.fade{"aria-labelledby" => "Order Details", :role => "dialog", :tabindex => "-1"}

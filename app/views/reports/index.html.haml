@@ -18,7 +18,7 @@
             %tr  
             %td.text-center= i+1
             %td.text-center= user.id
-            %td.text-center= link_to user.name, reports_individual_employee_path(user_id: user.id) 
+            %td.text-center= link_to user.name, individual_employee_last_month_report_path(user.id) 
             %td.text-center ₹ #{user.total}
             %td.text-center ₹ #{user.subsidy}
             %td.text-center ₹ #{user.total - user.subsidy}

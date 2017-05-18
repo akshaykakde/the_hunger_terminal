@@ -1,23 +1,24 @@
 -if !@users.empty?
   .container
     %h3.text-center Employee's Reports
-    = link_to "Download_pdf", reports_download_pdf_path(:format => 'pdf'), class: "btn btn-success"
-    .table-responsive
-      %table.table-hover.table-bordered
-        %tbody
-          %tr
-            %th.text-center Sr No.
-            %th.text-center Emp.ID
-            %th.text-center Name
-            %th.text-center TotalOrderPrice 
-            %th.text-center Subsidy
-            %th.text-center CTE
+    = link_to "print", reports_monthly_all_employees_path(:format => 'pdf'), class: 'btn btn-info'
+    .export
+      .table-responsive
+        %table.table-hover.table-bordered
+          %tbody
+            %tr
+              %th.text-center Sr No.
+              %th.text-center Emp.ID
+              %th.text-center Name
+              %th.text-center TotalOrderPrice 
+              %th.text-center Subsidy
+              %th.text-center CTE
 
-          - @users.each_with_index do |user,i|
-            %tr  
-            %td.text-center= i+1
-            %td.text-center= user.id
-            %td.text-center= link_to user.name, reports_individual_employee_path(user_id: user.id) 
-            %td.text-center ₹ #{user.total}
-            %td.text-center ₹ #{user.subsidy}
-            %td.text-center ₹ #{user.total - user.subsidy}
+            - @users.each_with_index do |user,i|
+              %tr  
+              %td.text-center= i+1
+              %td.text-center= user.id
+              %td.text-center= link_to user.name, individual_employee_last_month_report_path(user.id) 
+              %td.text-center ₹ #{user.total}
+              %td.text-center ₹ #{user.subsidy}
+              %td.text-center ₹ #{user.total - user.subsidy}

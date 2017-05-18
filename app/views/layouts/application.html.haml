@@ -9,11 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
-    -if user_signed_in?  && current_user.role == "company_admin"
-      =render  "home/sidebar"
-      =render "home/navbar"
-    -else
-      =render "home/navbar"
+    =render "home/navbar"
     -unless request.original_url == root_url
       .container#pdf_link
         %ol
@@ -32,5 +28,5 @@
     -if user_signed_in? && request.original_url != root_url
       =render "layouts/backlink"
   %footer.container-fluid.text-center
-    %p © the hunger terminal
+    %p © Josh Software Pvt. Ltd.
 
