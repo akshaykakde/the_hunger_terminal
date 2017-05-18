@@ -13,7 +13,7 @@
           - @terminals.each_with_index do |terminal,i|
             %tr  
             %td.text-center= i+1
-            %td.text-center= link_to terminal.name, reports_individual_terminal_last_month_report_path(terminal_id:terminal.id)
+            %td.text-center= link_to terminal.name, individual_terminal_last_month_report_path(terminal.id)
             %td.text-center ₹ #{terminal.total}
             %td.text-center ₹ #{terminal.total_paid}
             / %td.text-center= terminal.no_of_orders
