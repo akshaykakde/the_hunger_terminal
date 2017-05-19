@@ -5,7 +5,7 @@
     = link_to 'last month report', all_terminals_last_month_reports_path, class: 'btn btn-info' 
     = link_to 'print',  all_terminals_daily_report_path(:format => 'pdf' ), class: 'btn btn-info'
     .table-responsive
-      %table.table-hover.table-bordered.terminals_report_table
+      %table.table-hover.table-bordered{:align => 'center'}
         %tbody
           %tr
             %th.text-center #
@@ -28,10 +28,12 @@
             %td.text-center= terminal.menu_item_name
             %td.text-center= terminal.quantity
             -terminal_name = terminal.name
+    
     %h3.text-center Total Order From All Terminals
+    
     -grand_total = 0        
     .table-responsive
-      %table.table-hover.table-bordered.terminals_report_table
+      %table.table-hover.table-bordered.terminals_report_table{:align => 'center'}
         %tbody
           %tr
             %th.text-center #
@@ -43,4 +45,5 @@
             %td.text-center= terminal.name
             %td.text-center= terminal.total
             -grand_total = grand_total + terminal.total
+    
     %h3.text-center Todays Net Total = #{grand_total}/-

@@ -4,7 +4,7 @@
     = link_to 'Todays Orders', employees_todays_orders_path(todays_orders: "Todays orders"), class: "btn btn-info"
     = link_to 'Last Month Orders', monthly_all_employees_reports_path(last_month_orders: "last months orders"), class: "btn btn-info"
     .table-responsive
-      %table.table-hover.table-bordered.employees_report_table
+      %table.table-hover.table-bordered{:align => 'center'}
         %tbody
           %tr
             %th.text-center Sr No.

@@ -419,12 +419,12 @@ button.toast-close-button {
     display: none;
   }
 
-  a{
-    display: hidden;
-  }
-
   .pdf_link {
     display: none;
+  }
+
+  a[href]:after{
+    content: none;
   }
 
   #container {
@@ -441,6 +441,5 @@ button.toast-close-button {
   #pdf_link {
     display: none;
   }
-
 }
 

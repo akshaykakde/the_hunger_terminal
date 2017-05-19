@@ -4,7 +4,7 @@
     %h4.text-center Date: #{ Time.zone.now.strftime("%d %B, %Y") }
     = link_to 'print',employees_daily_order_detail_path(:format => 'pdf' ), class: 'btn btn-info'
     .table-responsive
-      %table.table-hover.table-bordered.employees_report_table
+      %table.table-hover.table-bordered{:align => 'center'}
         %tbody
           %tr 
             %th.text-center #
