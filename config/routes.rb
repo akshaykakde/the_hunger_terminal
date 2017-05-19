@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :order_details, only: :destroy
 
   get 'order/vendors' => 'orders#load_terminal' ,:as => 'vendors'
-  get 'order/myOrder' => 'orders#order_history' ,:as => 'orders'
+  get 'orders/history' => 'orders#order_history' ,:as => 'orders'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   devise_for :users, :skip => [:registration],  controllers: { confirmations: 'confirmation' }
@@ -56,7 +56,9 @@ Rails.application.routes.draw do
   get 'admin/dashboard/payment', to: 'admin_dashboard#payment'
   get 'admin/dashboard/pay', to: 'admin_dashboard#pay'
 
-  get 'admin_dashboard/input_terminal_extra_charges'
+  get 'admin_dashboard/terminals/extra/charges', to: 'admin_dashboard#input_terminal_extra_charges', 
+    as: 'extra_charges_for_terminals'
+    
   post 'admin_dashboard/save_terminal_extra_charges'
 
   delete 'admin_dashboard/:id(.:format)', :to => 'admin_dashboard#destroy', 
@@ -69,29 +71,27 @@ Rails.application.routes.draw do
   
 
 
-  get 'reports/employee/individual/last/month/:id', to: 'reports#individual_employee_last_month_report', 
+  get 'reports/employee/:id/last/month/', to: 'reports#individual_employee_last_month_report', 
     as: 'individual_employee_last_month_report'
   
   get 'reports/employees/todays/orders', to: 'reports#employees_todays_orders', 
     as: 'employees_todays_orders'
   
-  get 'reports/employees/monthly/all/', to: 'reports#monthly_all_employees', 
+  get 'reports/employees/monthly', to: 'reports#monthly_all_employees', 
     as: 'monthly_all_employees_reports'
   
   get "reports/download_pdf" => "reports#download_pdf"
   
-  get 'reports/terminals/all/last/month/', to: 'reports#all_terminals_last_month_reports', 
+  get 'reports/terminals/last/month/', to: 'reports#all_terminals_last_month_reports', 
     as: 'all_terminals_last_month_reports'
   
-  get 'reports/terminals/all/daily', to: 'reports#all_terminals_daily_report', 
+  get 'reports/terminals/daily', to: 'reports#all_terminals_daily_report', 
     as: 'all_terminals_daily_report'
   
-  get 'reports/terminal/individual/last/month/:id', to: 'reports#individual_terminal_last_month_report', 
+  get 'reports/terminal/:id/last/month/', to: 'reports#individual_terminal_last_month_report', 
     as: 'individual_terminal_last_month_report'
   
-  get 'reports/employees/daily/order/detail', to: 'reports#employees_daily_order_detail', 
+  get 'reports/employees/daily/orders', to: 'reports#employees_daily_order_detail', 
     as: 'employees_daily_order_detail'
-  
-  
-  
+    
 end

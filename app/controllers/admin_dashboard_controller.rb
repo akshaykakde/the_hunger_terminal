@@ -7,7 +7,7 @@ class AdminDashboardController < ApplicationController
   add_breadcrumb "Home", :root_path
   add_breadcrumb "Vendor wise Orders", :admin_dashboard_index_path, only: [:index]
   # add_breadcrumb "Employee wise Orders", :reports_employees_daily_order_detail_path, only: [ :input_terminal_extra_charges]
-  add_breadcrumb "Add Terminal Extra Chrges", :admin_dashboard_input_terminal_extra_charges_path, only: [:input_terminal_extra_charges]
+  add_breadcrumb "Add Terminal Extra Chrges", :extra_charges_for_terminals_path, only: [:input_terminal_extra_charges]
 
   def index
     authorize! :index, :order_management
