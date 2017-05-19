@@ -21,7 +21,7 @@
               %li
                 %a{href: admin_dashboard_index_path} Vendor wise Orders
               %li
-                %a{href: reports_employees_daily_order_detail_path }Employee wise Orders
+                %a{href: employees_daily_order_detail_path }Employee wise Orders
               %li
                 %a{href: admin_dashboard_input_terminal_extra_charges_path} Add Extra charges
           / %div.icon
@@ -39,9 +39,9 @@
               .name Employees Report
             %ul.dropdown-menu
               %li
-                %a{ :href => reports_employees_todays_orders_path } Todays Report
+                %a{ :href => employees_todays_orders_path } Todays Report
               %li
-                %a{ :href => reports_monthly_all_employees_path } Last Month Report
+                %a{ :href => monthly_all_employees_reports_path } Last Month Report
               %li
                 %a{ :href => reports_index_path } Current Balance
 
@@ -50,9 +50,9 @@
               .name Terminals Report
             %ul.dropdown-menu
               %li
-                %a{ :href => reports_all_terminals_daily_report_path } Todays Report
+                %a{ :href => all_terminals_daily_report_path } Todays Report
               %li
-                %a{ :href => reports_all_terminals_last_month_reports_path } Last Month Report
+                %a{ :href => all_terminals_last_month_reports_path } Last Month Report
               %li
                 %a{ :href => admin_dashboard_payment_path } Running Balance
           %li   

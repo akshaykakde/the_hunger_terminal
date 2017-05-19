@@ -2,8 +2,8 @@
   .container
     %h3.text-center #{current_user.company.name.capitalize} Vendors' Today's Reports
     %h2.text-center Date: #{ Time.zone.now.strftime("%d %B, %Y") }
-    = link_to 'last month report', reports_all_terminals_last_month_reports_path, class: 'btn btn-info' 
-    = link_to 'print',  reports_all_terminals_daily_report_path(:format => 'pdf' ), class: 'btn btn-info'
+    = link_to 'last month report', all_terminals_last_month_reports_path, class: 'btn btn-info' 
+    = link_to 'print',  all_terminals_daily_report_path(:format => 'pdf' ), class: 'btn btn-info'
     .table-responsive
       %table.table-hover.table-bordered.terminals_report_table
         %tbody

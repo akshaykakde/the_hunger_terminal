@@ -1,62 +1,62 @@
-%nav.sidenav
-  %div.icon
-    %a{:href => "/companies/#{current_user.company_id}/users"}
-      %span.glyphicon.glyphicon-user.gly
-      .name.text-center Employee
+/ %nav.sidenav
+/   %div.icon
+/     %a{:href => "/companies/#{current_user.company_id}/users"}
+/       %span.glyphicon.glyphicon-user.gly
+/       .name.text-center Employee
   
-  %li.dropdown.icon
-    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => admin_dashboard_index_path}
-      %span.glyphicon.glyphicon-th-list
-      .name.text-center Today's Orders 
-      %span.caret
-    %ul.dropdown-menu
-      %li
-        %a#menu{href: admin_dashboard_index_path} Vendor wise Orders
-      %li
-        %a#menu{href: reports_employees_daily_order_detail_path }Employee wise Orders
-      %li
-        %a#menu{href: admin_dashboard_input_terminal_extra_charges_path} Add Extra charges
-  / %div.icon
-  /   %a{:href => reports_index_path}
-  /     %span.glyphicon.glyphicon-file.gly
-  /     .name.text-center Empolyees Report
+/   %li.dropdown.icon
+/     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => admin_dashboard_index_path}
+/       %span.glyphicon.glyphicon-th-list
+/       .name.text-center Today's Orders 
+/       %span.caret
+/     %ul.dropdown-menu
+/       %li
+/         %a#menu{href: admin_dashboard_index_path} Vendor wise Orders
+/       %li
+/         %a#menu{href: reports_employees_daily_order_detail_path }Employee wise Orders
+/       %li
+/         %a#menu{href: admin_dashboard_input_terminal_extra_charges_path} Add Extra charges
+/   / %div.icon
+/   /   %a{:href => reports_index_path}
+/   /     %span.glyphicon.glyphicon-file.gly
+/   /     .name.text-center Empolyees Report
   
-  / %div.icon
-  /   %a{:href => reports_all_terminals_daily_report_path}
-  /     %span.glyphicon.glyphicon-cutlery.gly
-  /     .name.text-center Terminals Report
+/   / %div.icon
+/   /   %a{:href => reports_all_terminals_daily_report_path}
+/   /     %span.glyphicon.glyphicon-cutlery.gly
+/   /     .name.text-center Terminals Report
 
-  %li.dropdown.icon
-    %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
-      %span.glyphicon.glyphicon-file.gly
-      .name.text-center Employees Report
-      %span.caret
-    %ul.dropdown-menu
-      %li
-        %a#menu{ :href => reports_employees_todays_orders_path } Todays Report
-      %li
-        %a#menu{ :href => reports_monthly_all_employees_path } Last Month Report
-      %li
-        %a#menu{ :href => reports_index_path } Current Balance
+/   %li.dropdown.icon
+/     %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
+/       %span.glyphicon.glyphicon-file.gly
+/       .name.text-center Employees Report
+/       %span.caret
+/     %ul.dropdown-menu
+/       %li
+/         %a#menu{ :href => reports_employees_todays_orders_path } Todays Report
+/       %li
+/         %a#menu{ :href => reports_monthly_all_employees_path } Last Month Report
+/       %li
+/         %a#menu{ :href => reports_index_path } Current Balance
 
-  %li.dropdown.icon
-    %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
-      %span.glyphicon.glyphicon-file.gly
-      .name.text-center Terminals Report
-      %span.caret
-    %ul.dropdown-menu
-      %li
-        %a#menu{ :href => reports_all_terminals_daily_report_path } Todays Report
-      %li
-        %a#menu{ :href => reports_all_terminals_last_month_reports_path } Last Month Report
-      %li
-        %a#menu{ :href => admin_dashboard_payment_path } Running Balance
-  %div.icon    
-    %a{:href => "/companies/#{current_user.company_id}/terminals"}
-      %span.glyphicon.glyphicon-cutlery.gly
-      .name.text-center Terminal
+/   %li.dropdown.icon
+/     %a.dropdown-toggle{"data-toggle" => "dropdown",:href => ""}
+/       %span.glyphicon.glyphicon-file.gly
+/       .name.text-center Terminals Report
+/       %span.caret
+/     %ul.dropdown-menu
+/       %li
+/         %a#menu{ :href => reports_all_terminals_daily_report_path } Todays Report
+/       %li
+/         %a#menu{ :href => reports_all_terminals_last_month_reports_path } Last Month Report
+/       %li
+/         %a#menu{ :href => admin_dashboard_payment_path } Running Balance
+/   %div.icon    
+/     %a{:href => "/companies/#{current_user.company_id}/terminals"}
+/       %span.glyphicon.glyphicon-cutlery.gly
+/       .name.text-center Terminal
   
-  %div.icon
-    %a{ :href => admin_dashboard_payment_path }
-      %span.i.fa.fa-inr{:style => "font-size:3r0px;color:#337ab7;align:center"}
-      .name.text-center Payment
+/   %div.icon
+/     %a{ :href => admin_dashboard_payment_path }
+/       %span.i.fa.fa-inr{:style => "font-size:3r0px;color:#337ab7;align:center"}
+/       .name.text-center Payment
