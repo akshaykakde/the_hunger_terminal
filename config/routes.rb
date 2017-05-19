@@ -56,9 +56,9 @@ Rails.application.routes.draw do
   get 'admin/dashboard/payment', to: 'admin_dashboard#payment'
   get 'admin/dashboard/pay', to: 'admin_dashboard#pay'
 
-  get 'admin_dashboard/terminals/extra/charges', to: 'admin_dashboard#input_terminal_extra_charges', 
+  get 'admin/dashboard/terminals/extra/charges', to: 'admin_dashboard#input_terminal_extra_charges', 
     as: 'extra_charges_for_terminals'
-    
+
   post 'admin_dashboard/save_terminal_extra_charges'
 
   delete 'admin_dashboard/:id(.:format)', :to => 'admin_dashboard#destroy', 
