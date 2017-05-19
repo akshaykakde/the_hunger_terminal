@@ -59,7 +59,7 @@ class ReportsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        kit = PDFKit.new('http://localhost:3000/reports/all_terminals_daily_report', :page_size => 'A4')
+        kit = PDFKit.new('http://localhost:3000/reports/employees/daily/orders', :page_size => 'A4')
         kit.stylesheets << File.join(Rails.root, 'app', 'assets', 'stylesheets', 'reports.scss')
         send_data(kit.to_pdf, :filename => "your_pdf_name.pdf", :type => 'application/pdf',:disposition => 'inline')
       end

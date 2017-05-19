@@ -8,7 +8,7 @@ class Order < ApplicationRecord
   # :can_be_created?, 
   # validate :can_be_updated?, on: :update  
   # validates :user_id, uniqueness: { scope: :date }
-  validate :valid_date?, on: :create
+  # validate :valid_date?, on: :create
 
   belongs_to :user
   belongs_to :company
@@ -47,7 +47,7 @@ class Order < ApplicationRecord
       group('orders.id,orders.terminal_id,users.name,order_details.menu_item_name,order_details.quantity,terminals.name').
       select('orders.id','users.name AS emp_name',
         'order_details.menu_item_name AS menu, quantity,terminals.name AS vendor').
-      order("users.name ASC")
+      order("terminals.name ASC")
   end
 
   def self.all_terminals_daily_report(c_id)
