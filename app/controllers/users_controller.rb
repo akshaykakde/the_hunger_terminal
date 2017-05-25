@@ -14,13 +14,6 @@ class UsersController < ApplicationController
   add_breadcrumb "Employees", :company_users_path, only: [:index, :show, :search]
   add_breadcrumb "Employee Detail", :company_user_path, only: [:show]
 
-  def index
-    @users = @company.employees.where(role: "employee").order(:created_at).page(params[:page]).per(4)
-    if @users.empty?
-      flash.now[:error] = "Sorry, No record is found"
-      render "index"
-    end 
-  end
 
   def new
     @company = Company.new
